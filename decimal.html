@@ -1,0 +1,32 @@
+
+
+<script type="text/javascript"> 
+function abc() {
+var a = document.getElementById("dec").value;
+    parseNumberCustom(a);
+    };
+function parseNumberCustom(number_string) {
+if(number_string.startsWith("'") == true){
+var b = number_string.replace("'", "");
+var new_num = parseInt(b.indexOf(',') >= 3 ? b.split(',')[0] : b.replace(/[^0-9\.]/g, ''));
+var new_number = " ' "+ new_num + " ' ";
+document.getElementById("output").innerHTML = new_number;
+}
+else{
+    var new_number = parseInt(number_string.indexOf(',') >= 3 ? number_string.split(',')[0] : number_string.replace(/[^0-9\.]/g, ''));
+    console.log('Before==>' + number_string + ', After==>' + new_number);
+ document.getElementById("output").innerHTML = new_number;
+}
+
+}
+
+
+</script> 
+<html>
+<input id="dec"/>
+<button type="button" onclick =abc()>Submit</button>
+<br>
+Output is : <label id="output">  </label>
+</html>
+
+

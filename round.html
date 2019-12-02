@@ -1,0 +1,26 @@
+<script type="text/javascript"> 
+function abc() {
+var n = (document.getElementById("abc").value);
+
+var lastone = n.toString().split('').pop();
+
+if(parseInt(lastone)  >= 5 ){
+var c=n.substring(0, n.length-1 ) + "9";
+ document.getElementById("output").innerHTML = c;
+console.log("n",c);
+}
+else if((parseInt(lastone)< 5)){
+var c =parseInt(n)-parseInt(lastone)-1; 
+ document.getElementById("output").innerHTML = c;
+console.log("n",c);
+}
+}
+
+</script> 
+<html>
+<input id="abc"/>
+<button type="button" onClick =abc()>Submit</button>
+<br>
+Output is : <label id="output">  </label>
+</html>
+
